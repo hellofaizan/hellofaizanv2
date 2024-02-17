@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { useToast } from "@/components/ui/use-toast"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
   const { toast } = useToast()
@@ -25,14 +27,10 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            <Avatar>
+              <AvatarImage src="https://github.com/hellofaizan.png" alt="@hellofaizan" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
           </a>
         </div>
       </div>
