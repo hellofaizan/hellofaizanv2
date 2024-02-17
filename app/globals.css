@@ -7,6 +7,10 @@
   color: #fefefe;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
@@ -46,13 +50,19 @@ html {
   @apply visible;
 }
 
+.titleUrl {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .prose a {
   @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {
   @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
+  content: "#";
 }
 
 .prose *:hover > .anchor {
@@ -108,8 +118,8 @@ pre {
 }
 
 /* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

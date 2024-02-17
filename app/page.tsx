@@ -9,7 +9,7 @@ export default function Home() {
   const { toast } = useToast()
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main >
       ajhdbskbjr,jhrbf,jhrbs
     </main>
   )
