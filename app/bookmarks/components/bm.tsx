@@ -6,7 +6,7 @@ import axios from 'axios'
 import BookmarkComp from '@/components/bookmark'
 
 const BookmarkBM = () => {
-    const [bookmarks, setBookmarks] = useState('')
+    const [bookmarks, setBookmarks] = useState([])
 
     useEffect(() => {
         axios.get('/api/bookmarks').then((res) => {
@@ -28,8 +28,6 @@ const BookmarkBM = () => {
                     <div className='flex flex-col items-center justify-center'>
                         <div className='animate-spin rounded-full h-10 w-10 border-b-2 border-gray-100'></div>
                     </div>
-
-
                 )
             }
 
