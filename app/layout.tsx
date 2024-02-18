@@ -1,10 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { Toaster } from "@/components/ui/toaster"
-import { ThemeProvider } from 'next-themes'
+import { Toaster } from "@/components/ui/sonner"
 import { Navbar } from '@/components/Navbar';
 
 export const metadata: Metadata = {

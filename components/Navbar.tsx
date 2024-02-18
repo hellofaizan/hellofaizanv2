@@ -4,6 +4,8 @@ import { Coffee, QrCode, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
+import { toast } from "sonner"
+import { useState } from 'react';
 
 const navItems = {
     '/': {
@@ -26,9 +28,15 @@ const navItems = {
 const copyURL = () => {
     const url = window.location.href;
     navigator.clipboard.writeText(url);
+    toast("Website URL copied to clipboard! 📋")
 };
 
+const goToDono = () => {
+    window.open('https://www.buymeacoffee.com/hellofaizan', '_blank');
+}
+
 export function Navbar() {
+    const [visible, setVisible] = useState(false);
     return (
         <aside className="-ml-[8px] mb-16 tracking-tight">
             <div className="lg:sticky lg:top-20">
@@ -52,10 +60,10 @@ export function Navbar() {
 
                             );
                         })}
-                        <Link href={'https://github.com/sponsors/hellofaizan'} className='flex flex-row items-center'>
+                        <Button variant={'ghost'} size={'icon'} className='flex flex-row items-center' onClick={() => { goToDono() }}>
                             <Coffee className='hover:text-yellow-400 p-[2px] rounded' />
-                        </Link>
-                        <Button variant={'ghost'} size={'icon'} className='flex flex-row items-center' onClick={() => {copyURL()}}>
+                        </Button>
+                        <Button variant={'ghost'} size={'icon'} className='flex flex-row items-center' onClick={() => { copyURL() }}>
                             <Share2 className='hover:text-green-400 p-[2px] rounded' />
                         </Button>
                     </div>
