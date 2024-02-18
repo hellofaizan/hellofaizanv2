@@ -5,3 +5,9 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+.titleUrl {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
