@@ -5,14 +5,13 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import { toast } from "sonner"
-import { useState } from 'react';
 
 const navItems = {
     '/': {
         name: 'Home',
     },
-    '/about': {
-        name: 'About',
+    '/work': {
+        name: 'Work',
     },
     // '/blog': {
     //     name: 'Blog',
@@ -36,7 +35,6 @@ const goToDono = () => {
 }
 
 export function Navbar() {
-    const [visible, setVisible] = useState(false);
     return (
         <aside className="-ml-[8px] mb-16 tracking-tight">
             <div className="lg:sticky lg:top-20">

@@ -1,16 +1,12 @@
 "use client"
 
-import Image from 'next/image'
 import { useToast } from "@/components/ui/use-toast"
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import Home from "./(pages)/home/page"
 
-export default function Home() {
+export default function page() {
   const { toast } = useToast()
 
   return (
-    <main >
-      ajhdbskbjr,jhrbf,jhrbs
-    </main>
+    <Home />
   )
 }
