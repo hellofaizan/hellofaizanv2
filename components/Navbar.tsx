@@ -61,7 +61,7 @@ export function Navbar() {
                         <Button variant={'ghost'} size={'icon'} className='flex flex-row items-center' onClick={() => { goToDono() }}>
                             <Coffee className='hover:text-yellow-400 p-[2px] rounded' />
                         </Button>
-                        <Button variant={'ghost'} size={'icon'} className='flex flex-row items-center' onClick={() => { copyURL() }}>
+                        <Button variant={'ghost'} size={'icon'} className='flex-row items-center hidden md:flex' onClick={() => { copyURL() }}>
                             <Share2 className='hover:text-green-400 p-[2px] rounded' />
                         </Button>
                     </div>
