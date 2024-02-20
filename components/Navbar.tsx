@@ -53,7 +53,7 @@ export function Navbar() {
                                     >
                                         {name}
                                     </Link>
-                                    <Separator orientation="vertical" className='w-[1px] h-5 mx-3 items-center justify-center bg-[#252525]' />
+                                    <Separator orientation="vertical" className='w-[1px] h-5 mx-3 items-center justify-center bg-[#696969]' />
                                 </div>
 
                             );

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Bookmark } from 'lucide-react';
 import type { Metadata } from 'next';
-import { getBookmarks } from '../db/bookmarks';
+import { getBookmarks } from '../../db/bookmarks';
 import BookmarkBM from './components/bm';
 
 export const metadata: Metadata = {
