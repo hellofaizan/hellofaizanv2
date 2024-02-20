@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDown, Coffee, Menu, QrCode, Share2 } from 'lucide-react';
+import { ChevronDown, Coffee, Menu, QrCode, QrCodeIcon, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
@@ -13,6 +13,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { Dono } from '@/app/(pages)/home/components/dono';
+import { QRCode } from '@/app/(pages)/home/components/qrcode';
 
 const navItems = {
     '/': {
@@ -68,30 +70,13 @@ export function Navbar() {
                                 );
                             })}
 
-                            <p className="hover:text-neutral-200 hover:bg-gray-500/5 flex items-center py-0.5 pl-1 rounded cursor-pointer">
+                            <p className="hover:text-neutral-200 hover:bg-gray-500/5 flex items-center pl-1 mr-2 rounded cursor-pointer">
                                 more <ChevronDown size={20} className="hover:rotate-180" />
                             </p>
 
-                            <Dialog>
-                                <DialogTrigger asChild>
-                                    <Button variant={'link'} size={'icon'} className='flex flex-row items-center hover:bg-gray-500/5' >
-                                        <Coffee className='hover:text-yellow-400 p-[2px] rounded' />
-                                    </Button>
-                                </DialogTrigger>
-                                <DialogContent>
-                                    <DialogHeader>
-                                        <DialogTitle>Are you absolutely sure?</DialogTitle>
-                                        <DialogDescription>
-                                            This action cannot be undone. This will permanently delete your account
-                                            and remove your data from our servers.
-                                        </DialogDescription>
-                                    </DialogHeader>
-                                </DialogContent>
-                            </Dialog>
+                            <Dono />
 
-                            <Button variant={'ghost'} size={'icon'} className='flex-row items-center flex hover:bg-gray-500/5' onClick={() => { copyURL() }}>
-                                <Share2 className='hover:text-green-400 p-[2px] rounded' />
-                            </Button>
+                            <QRCode />
                         </div>
                         <div>
                             <Button variant={'ghost'} size={'icon'} className='flex-row items-center flex hover:bg-gray-500/5'>

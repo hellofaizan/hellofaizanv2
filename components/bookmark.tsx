@@ -29,7 +29,7 @@ export default function BookmarkComp({ bookmark }: { bookmark: any }) {
                     <Image src={`https://icon.horse/icon/${hostname}`} alt={hostname} width={46} height={46} />
                     <div className='flex flex-col'>
                         <h1 className='w-56 md:w-[28rem] font-semibold text-base sm:text-xl flex-nowrap overflow-hidden text-ellipsis titleUrl'>{title}</h1>
-                        <p className='text-gray-500 dark:text-gray-400'>{hostname}</p>
+                        <p className='text-gray-500'>{hostname}</p>
                     </div>
                 </div>
 

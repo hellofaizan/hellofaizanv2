@@ -11,7 +11,7 @@ const Home = () => {
                 <div className='space-y-4'>
                     <ul className='flex flex-col lg:flex-row gap-1 lg:gap-10 ml-5 list-disc text-neutral-400'>
                         <li>
-                            From Jammu Kashmir, India <span className='ml-1'>🇮🇳</span>
+                            Jammu & Kashmir, India <span className='ml-1'>🇮🇳</span>
                         </li>
                         <li>Open for collaboration</li>
                     </ul>

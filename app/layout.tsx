@@ -66,7 +66,7 @@ export default function RootLayout({
             {children}
           </div>
           <Toaster />
-          <Footer className='mb-3' />
+          <Footer className='mb-3 mt-8' />
         </div>
       </body>
     </html>
