@@ -3,9 +3,10 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Toaster } from "@/components/ui/sonner"
-import { Navbar } from '@/components/Navbar';
+import { Navbar } from '@/components/navbar';
 import Image from 'next/image';
 import gradientImg from "@/public/gradient.webp";
+import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hellofaizan.tech'),
@@ -57,15 +58,16 @@ export default function RootLayout({
       GeistMono.variable
     )}>
       {/* background image to top full width */}
-      <body className="w-full h-full">
-        <Image src={gradientImg} alt="background" className="absolute top-0 left-0 w-full h-1/2 md:h-3/5 object-cover z-[-1]" width={0} height={0} />
-        <main className='antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto'>
-          <div className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
+      <body>
+        <Image src={gradientImg} alt="background" className="absolute z-[-1] left-0 w-full h-1/2 md:h-3/5 object-cover" role="presentation" priority />
+        <div className='flex-auto min-w-0 flex flex-col md:px-0 container max-w-2xl mx-auto min-h-screen px-4 pt-16'>
+          <div className='flex-1'>
             <Navbar />
             {children}
-            <Toaster />
           </div>
-        </main>
+          <Toaster />
+          <Footer className='mb-3' />
+        </div>
       </body>
     </html>
   )
