@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import type { ComponentProps } from "react";
 import { Emoji } from "../components/mics/emoji";
@@ -28,7 +28,7 @@ export const Footer = ({ className, ...props }: ComponentProps<"footer">) => {
                     href="https://github.com/hellofaizan"
                     rel="noreferrer"
                     target="_blank">
-                    <Github size={20}/>
+                    <FaGithub size={16}/>
                     <span>
                         <span>hellofaizan</span>
                     </span>

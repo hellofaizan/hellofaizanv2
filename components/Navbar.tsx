@@ -28,13 +28,13 @@ const navItems = {
 
 export function Navbar() {
     return (
-        <aside className="-ml-[8px] mb-16 tracking-tight">
+        <aside className="mb-14 tracking-tight">
             <div className="lg:sticky lg:top-20">
                 <nav
                     className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
                     id="nav">
 
-                    <div className='flex items-center justify-between w-full'>
+                    <div className='flex items-center justify-between w-full text-lg'>
                         <div className="flex flex-row items-center">
                             {Object.entries(navItems).map(([path, { name }]) => {
                                 return (
@@ -62,7 +62,7 @@ export function Navbar() {
                         </div>
                         <div>
                             <Button variant={'ghost'} size={'icon'} className='flex-row items-center flex hover:bg-gray-500/5'>
-                                <Menu className='p-[2px] rounded' />
+                                <Menu className='rounded' />
                             </Button>
                         </div>
                     </div>
