@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Toaster } from "@/components/ui/sonner"
-import { Navbar } from '@/components/navbar';
+import { Navbar } from '../components/Navbar';
 import Image from 'next/image';
 import gradientImg from "@/public/gradient.webp";
 import { Footer } from '@/components/footer';

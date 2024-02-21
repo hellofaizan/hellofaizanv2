@@ -5,14 +5,6 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import { toast } from "sonner"
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog"
 import { Dono } from '@/app/(pages)/home/components/dono';
 import { QRCode } from '@/app/(pages)/home/components/qrcode';
 
@@ -33,16 +25,6 @@ const navItems = {
     //     name: 'Guestbook',
     // },
 };
-
-const copyURL = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url);
-    toast("Website URL copied to clipboard! 📋")
-};
-
-const goToDono = () => {
-    window.open('https://www.buymeacoffee.com/hellofaizan', '_blank');
-}
 
 export function Navbar() {
     return (
