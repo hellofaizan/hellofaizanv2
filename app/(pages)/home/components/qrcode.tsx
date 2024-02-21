@@ -3,7 +3,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { Button } from "@/components/ui/button"
-import { QrCode as QrCodeIcon } from "lucide-react"
+import { Copy, Download, QrCode as QrCodeIcon } from "lucide-react"
 import {
     Dialog,
     DialogContent,
@@ -22,8 +22,11 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
+import QRcodeImg from "@/public/qrcode.png"
+import Image from "next/image"
+import Link from "next/link"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { toast } from "sonner"
 
 export function QRCode() {
     const [open, setOpen] = React.useState(false)
@@ -39,9 +42,9 @@ export function QRCode() {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                        <DialogTitle>Edit profile</DialogTitle>
+                        <DialogTitle>Share my Portfolio</DialogTitle>
                         <DialogDescription>
-                            Make changes to your profile here. Click save when you're done.
+                            Recomend my portfolio to your friends or family, so that i can help them build the next big thing.
                         </DialogDescription>
                     </DialogHeader>
                     <ProfileForm />
@@ -59,17 +62,12 @@ export function QRCode() {
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader className="text-left">
-                    <DrawerTitle>Edit profile</DrawerTitle>
+                    <DrawerTitle>Share my Portfolio</DrawerTitle>
                     <DrawerDescription>
-                        Make changes to your profile here. Click save when you're done.
+                        Recomend my portfolio to your friends or family, so that i can help them build the next big thing.
                     </DrawerDescription>
                 </DrawerHeader>
-                <ProfileForm className="px-4" />
-                <DrawerFooter className="pt-2">
-                    <DrawerClose asChild>
-                        <Button variant="outline">Cancel</Button>
-                    </DrawerClose>
-                </DrawerFooter>
+                <ProfileForm className="px-4 mb-5" />
             </DrawerContent>
         </Drawer>
     )
@@ -77,16 +75,31 @@ export function QRCode() {
 
 function ProfileForm({ className }: React.ComponentProps<"form">) {
     return (
-        <form className={cn("grid items-start gap-4", className)}>
-            <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input type="email" id="email" defaultValue="shadcn@example.com" />
+        <div className={cn("flex flex-col items-start gap-4 mt-2", className)}>
+            <Image src={QRcodeImg} className="w-full h-full" alt="QR Code" width={500} height={500} priority />
+            {/* download button */}
+            <Link className="w-full" href={QRcodeImg.src} download="hellofaizan-qrcode" target={'_blank'}>
+                <Button variant="outline" className="w-full">
+                    Download <Download className="ml-2" size={15} />
+                </Button>
+            </Link>
+
+            <hr className="w-full border-t border-zinc-800 my-3" />
+
+            <div className="w-full flex gap-2">
+                <Input
+                    value="https://v2.hellofaizan.tech"
+                    readOnly
+                    className="w-full text-center"
+                />
+                <Button variant="default" size={'icon'} className=" border border-neutral-500" onClick={() => {
+                    navigator.clipboard.writeText("https://v2.hellofaizan.tech")
+                    toast("Copied to clipboard 📋")
+                }}>
+                    <Copy size={15} />
+                </Button>
             </div>
-            <div className="grid gap-2">
-                <Label htmlFor="username">Username</Label>
-                <Input id="username" defaultValue="@shadcn" />
-            </div>
-            <Button type="submit">Save changes</Button>
-        </form>
+
+        </div>
     )
 }
