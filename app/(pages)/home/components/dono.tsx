@@ -22,6 +22,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
+import { UPIQRCode } from "./upi"
 
 export function Dono() {
     const [open, setOpen] = React.useState(false)
@@ -79,13 +80,11 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
             className,
             "flex justify-center flex-col gap-y-2"
         )}>
+            <UPIQRCode />
             <Button variant="default" className="w-full h-12 bg-yellow-500 text-black" onClick={() => {
                 window.open('https://www.buymeacoffee.com/hellofaizan', '_blank')
             }}>
                 <p className="flex gap-x-1 items-center justify-center"><CoffeeIcon size={20} />Buy me a Coffee</p>
-            </Button>
-            <Button variant="default" className="w-full h-12 bg-gradient-to-r from-[#FF7909] via-white to-[#018B3D] text-black">
-                <p className="flex gap-x-1 items-center justify-center"><IndianRupee size={20} />UPI Payment 🇮🇳</p>
             </Button>
             <Button variant="default" className="w-full h-12 bg-[#21262D] text-white" onClick={() => {
                 window.open('https://github.com/sponsors/hellofaizan', '_blank')
